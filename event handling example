@@ -1,0 +1,18 @@
+import{useState} from "react";
+    export default function EventHandlingExample(){
+        const [message,setMessage]=useState("")
+    const handleChange=(event)=>{
+            setMessage(event.traget.value)
+    }
+    return<>
+    <h1>Event Handling Example</h1>
+    <input type="text" onChange={handleChange} placeholder="Enter Message"/>
+    <p>{message}</p>
+    </>
+
+     }
+     import EventHandlingExample from "./core comcepts/helloworld/EventHandlingExample";
+export default function App(){
+   return <EventHandlingExample/>
+   
+}
