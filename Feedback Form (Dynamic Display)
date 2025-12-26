@@ -1,0 +1,41 @@
+
+import React, { useState } from "react";
+function App() {
+  const [feedback, setFeedback] = useState("");
+  const [feedbackList, setFeedbackList] = useState([]);
+
+  const submitFeedback = () => {
+    if (feedback !== "") {
+      setFeedbackList([...feedbackList, feedback]);
+      setFeedback("");
+    }
+  };
+  return (
+    <div style={container}>
+      <h2>Task 5: Feedback Form</h2>
+
+      <input
+        type="text"
+        placeholder="Enter your feedback"
+        value={feedback}
+        onChange={(e) => setFeedback(e.target.value)}
+      />
+      <button onClick={submitFeedback}>Submit</button>
+
+      <ul>
+        {feedbackList.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+const container = {
+  width: "400px",
+  margin: "50px",
+  padding: "20px",
+  border: "1px solid #ccc",
+};
+export default App;
+
+ 
