@@ -1,0 +1,31 @@
+
+import React, { useState } from "react";
+function App() {
+  const [score, setScore] = useState(0);
+  const [answered, setAnswered] = useState(false);
+  const handleAnswer = (isCorrect) => {
+    if (!answered) {
+      if (isCorrect) setScore(score + 1);
+      setAnswered(true);
+    }
+  };
+  return (
+    <div style={container}>
+      <h2>Task 3: Online Quiz</h2>
+      <p>Which language is used for React?</p>
+      <button onClick={() => handleAnswer(false)}>Python</button>
+      <button onClick={() => handleAnswer(true)}>JavaScript</button>
+      <button onClick={() => handleAnswer(false)}>Java</button>
+      <h3>Score: {score}</h3>
+    </div>
+  );
+}
+const container = {
+  width: "400px",
+  margin: "50px",
+  padding: "20px",
+  border: "1px solid #ccc",
+};
+export default App;
+
+ 
